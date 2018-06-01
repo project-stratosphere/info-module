@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/airBnc/booking-module
+  - https://github.com/airBnc/reviews-module
+  - https://github.com/airBnc/calendar-module
+  - https://github.com/airBnc/ivan-proxy-server
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> npm start
 
 ## Requirements
 
