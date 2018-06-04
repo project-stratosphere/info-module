@@ -30,28 +30,13 @@ export default class App extends React.Component {
             Baths: {this.state.generalInfo.property_features.baths}<br />
           </div>
         </div>
-        <div id="highlights" style={border}><h1>Higlights</h1>
-          {
-            this.state.generalInfo.highlights.map(highlight => (
-              <div key={highlight.head}><h5>{highlight.head}</h5></div>
-            ))
-          }
-        </div>
-        <div id="description" style={border}><h1>Description</h1>
-          <div id="short-description"><p>{this.state.generalInfo.short_description}</p></div>
-          <div id="more-descriptions">
-            {
-              this.state.generalInfo.more_description.map(description => (
-                <div key={description.head}><h4>{description.head}</h4>
-                  <p>{description.body}</p>
-                </div>
-              ))
-            }
-          </div>
-        </div>
+
+        <Description
+          short_description={this.state.generalInfo.short_description}
+          more_description={this.state.generalInfo.more_description}
+        />
         <Amenities amenities={this.state.amenities} />
       </div>
     );
   }
 }
-
