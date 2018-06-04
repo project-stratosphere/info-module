@@ -12,14 +12,12 @@ const Highlights = props => (
 );
 
 Highlights.propTypes = {
-  highlights: PropTypes.shape([
-    {
-      head: String,
-      body: String,
-    },
-  ]),
+  highlights: PropTypes.arrayOf(PropTypes.shape({
+    head: PropTypes.string,
+    body: PropTypes.string,
+  })),
   border: PropTypes.shape({
-    border: String,
+    border: PropTypes.string,
   }),
 };
 

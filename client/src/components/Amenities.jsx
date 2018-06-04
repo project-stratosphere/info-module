@@ -22,21 +22,17 @@ const Amenities = props => (
 
 Amenities.propTypes = {
   amenities: PropTypes.shape({
-    id: Number,
-    items: [
-      {
-        category_head: String,
-        category_items: [
-          {
-            amenity_description: String,
-            supplemental_description: String,
-          },
-        ],
-      },
-    ],
+    id: PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      category_head: PropTypes.string,
+      category_items: PropTypes.arrayOf(PropTypes.shape({
+        amenity_description: PropTypes.string,
+        supplemental_description: PropTypes.string,
+      })),
+    })),
   }),
   border: PropTypes.shape({
-    border: String,
+    border: PropTypes.string,
   }),
 };
 
@@ -55,7 +51,9 @@ Amenities.defaultProps = {
       },
     ],
   },
-  border: { border: 'solid black 1px' },
+  border: {
+    border: 'solid black 1px',
+  },
 };
 
 export default Amenities;

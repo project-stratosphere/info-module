@@ -16,15 +16,13 @@ const Description = props => (
   </div>);
 
 Description.propTypes = {
-  short_description: String,
-  more_description: PropTypes.shape([
-    {
-      head: String,
-      body: String,
-    },
-  ]),
+  short_description: PropTypes.string,
+  more_description: PropTypes.arrayOf(PropTypes.shape({
+    head: PropTypes.string,
+    body: PropTypes.string,
+  })),
   border: PropTypes.shape({
-    border: String,
+    border: PropTypes.string,
   }),
 };
 
