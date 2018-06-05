@@ -8,7 +8,6 @@ app.use(/(\/rooms\/100|\/rooms\/[1-9][0-9]|\/rooms\/[1-9])\b/, express.static(pa
 
 app.get('/api/rooms/:id/general', (req, res) => {
   const { id } = req.params;
-  console.log(req.method, req.path);
   db.getGeneralInfo(id)
     .then((data) => {
       res.statusCode = 200;
@@ -21,7 +20,6 @@ app.get('/api/rooms/:id/general', (req, res) => {
 });
 
 app.get('/api/rooms/:id/amenities', (req, res) => {
-  console.log(req.method, req.path);
   const { id } = req.params;
   db.getAmenities(id)
     .then((data) => {
