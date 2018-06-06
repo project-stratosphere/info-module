@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/properties');
-mongoose.Promise = Promise;
 
 const generalInfoSchema = mongoose.Schema({
   id: { type: Number, unique: true },
