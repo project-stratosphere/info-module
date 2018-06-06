@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description should render correctly 1`] = `
+<div
+  id="amenities"
+  style={
+    Object {
+      "border": "solid black 1px",
+    }
+  }
+>
+  <h1>
+    Amenities
+  </h1>
+  <div
+    key="Mock Category Head"
+  >
+    <h3>
+      Mock Category Head
+    </h3>
+    <div
+      key="Mock Category Item"
+    >
+      <h4>
+        Mock Category Item
+      </h4>
+      <p>
+        Mock Supplemental Description
+      </p>
+    </div>
+  </div>
+</div>
+`;

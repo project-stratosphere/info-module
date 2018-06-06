@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary should render correctly 1`] = `
+<div
+  id="summary"
+  style={
+    Object {
+      "border": "solid black 1px",
+    }
+  }
+>
+  <h1>
+    Summary
+  </h1>
+  <div
+    id="home-type"
+  >
+    <h6>
+      Mock Home Type
+    </h6>
+  </div>
+  <div
+    id="home-title"
+  >
+    <h2>
+      Mock Title
+    </h2>
+  </div>
+  <div
+    id="home-location"
+  >
+    <h5>
+      Mock Location
+    </h5>
+  </div>
+  <div
+    id="owner-info"
+  >
+    <img
+      alt="avatar not found"
+      src="MockAvatarURL"
+    />
+    <br />
+    Mock Owner Name
+  </div>
+  <div
+    id="property-features"
+  >
+    Guests: 
+    1
+    <br />
+    Bedrooms: 
+    1
+    <br />
+    Beds: 
+    1
+    <br />
+    Baths: 
+    1
+    <br />
+  </div>
+</div>
+`;

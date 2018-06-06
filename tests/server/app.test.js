@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../server/app');
+const app = require('../../server/app');
 
 describe('Server endpoint/path tests', () => {
   test('Should respond to GET method to base endpoint', () => {

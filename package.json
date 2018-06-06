@@ -10,7 +10,7 @@
   },
   "scripts": {
     "postinstall": "webpack && npm run load-data",
-    "test": "jest",
+    "test": "jest --forceExit",
     "start": "node server/index.js",
     "load-data": "node database/load.js"
   },
@@ -33,6 +33,10 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",

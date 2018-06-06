@@ -11,7 +11,7 @@ const fakeAmenities = JSON.parse('{"id":1,"items":[{"category_head":"Industrial"
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.id = window.location.pathname.match(/[0-9]+/)[0] || 1;
+    this.id = window.location.pathname.match(/[0-9]+/) || [1];
     this.state = {
       generalInfo: fakeGeneralInfo,
       amenities: fakeAmenities,
@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
   getGeneralInfo() {
     $.ajax({
-      url: `/api/room/${this.id}/general`,
+      url: `/api/room/${this.id[0]}/general`,
       type: 'GET',
       success: data => this.setState({
         generalInfo: JSON.parse(data),
@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
   getAmenities() {
     $.ajax({
-      url: `/api/room/${this.id}/amenities`,
+      url: `/api/room/${this.id[0]}/amenities`,
       type: 'GET',
       success: data => this.setState({
         amenities: JSON.parse(data),
