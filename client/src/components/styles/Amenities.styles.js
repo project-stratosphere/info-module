@@ -5,8 +5,11 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
-  box-shadow: 0 0 2px grey;
-  padding: 1em;
+  background-color: white;
+  margin: auto;
+  padding: 2em;
+  border: 1px solid #888;
+  width: 80%;
 `;
 
 export const Title = styled.div`

@@ -14,13 +14,34 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+const Modal = styled.div`
+  display: ${props => props.displayModal};
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+`;
+
+const ShowAll = styled.div`
+  order: 4;
+  color: blue;
+`;
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.id = window.location.pathname.match(/[0-9]+/) || [1];
+    this.handleAmenitiesDisplay = this.handleAmenitiesDisplay.bind(this);
+    this.handleAmenitiesHide = this.handleAmenitiesHide.bind(this);
     this.state = {
       generalInfo: fakeGeneralInfo,
       amenities: fakeAmenities,
+      displayModal: 'none',
     };
   }
 
@@ -49,6 +70,18 @@ export default class App extends React.Component {
     });
   }
 
+  handleAmenitiesDisplay() {
+    this.setState({
+      displayModal: 'flex',
+    });
+  }
+
+  handleAmenitiesHide() {
+    this.setState({
+      displayModal: 'none',
+    });
+  }
+
   render() {
     return (
       <Wrapper>
@@ -64,7 +97,14 @@ export default class App extends React.Component {
           short_description={this.state.generalInfo.short_description}
           more_description={this.state.generalInfo.more_description}
         />
-        <Amenities amenities={this.state.amenities} />
+        <ShowAll onClick={this.handleAmenitiesDisplay}>Show all amenities</ShowAll>
+        <Modal
+          name="modal"
+          displayModal={this.state.displayModal}
+          onClick={this.handleAmenitiesHide}
+        >
+          <Amenities amenities={this.state.amenities} />
+        </Modal>
       </Wrapper>
     );
   }
