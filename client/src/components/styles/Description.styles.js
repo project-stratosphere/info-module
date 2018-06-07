@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  order: 2;
   display: flex;
   flex-direction: column;
   margin: 1em;
@@ -13,9 +14,9 @@ export const ShortDescription = styled.div`
 `;
 
 export const MoreDescription = styled.div`
+  order: 2;
   display: flex;
   flex-direction: column;
-  order: 2;
 `;
 
 export const DescriptionContainer = styled.div`

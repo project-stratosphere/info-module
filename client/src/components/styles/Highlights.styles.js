@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  order: 3;
   display: flex;
   flex-direction: column;
   border-radius: 2px;
-  width: 75%;
-  margin: auto;
+  margin-bottom: 2em;
   padding: 0.5em;
   box-shadow: 0 0 1px grey;
   font-family: 'Raleway', sans-serif;

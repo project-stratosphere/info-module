@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  order: 4;
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
   box-shadow: 0 0 2px grey;
-  padding: 0.5em;
+  padding: 1em;
 `;
 
 export const Title = styled.div`

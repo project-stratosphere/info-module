@@ -18,6 +18,7 @@ export const HomeType = styled.div`
 export const HomeTitle = styled.div`
   order: 2;
   font-size: 2em;
+  margin: 0.25em 0 0.25em 0;
 `;
 
 export const HomeLocation = styled.div`
@@ -30,7 +31,7 @@ export const Features = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   order: 4;
-  background-color
+  margin-top: 1em;
 `;
 
 export const Feature = styled.div`
