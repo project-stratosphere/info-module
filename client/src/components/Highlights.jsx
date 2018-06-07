@@ -1,14 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {
+  Wrapper,
+  Title,
+  HighlightsWrapper,
+  Highlight,
+} from './styles/Highlights.styles';
 
 const Highlights = props => (
-  <div id="highlights" style={props.border}><h1>Higlights</h1>
-    {
-      props.highlights.map(highlight => (
-        <div key={highlight.head}><h5>{highlight.head}</h5></div>
-      ))
-    }
-  </div>
+  <Wrapper>
+    <Title>Home Highlights</Title>
+    <HighlightsWrapper>
+      {
+        props.highlights.map(highlight => (
+          <Highlight key={highlight.head}>{highlight.head}</Highlight>
+        ))
+      }
+    </HighlightsWrapper>
+  </Wrapper>
 );
 
 Highlights.propTypes = {
@@ -16,9 +25,6 @@ Highlights.propTypes = {
     head: PropTypes.string,
     body: PropTypes.string,
   })),
-  border: PropTypes.shape({
-    border: PropTypes.string,
-  }),
 };
 
 Highlights.defaultProps = {
@@ -28,9 +34,6 @@ Highlights.defaultProps = {
       body: 'String',
     },
   ],
-  border: {
-    border: 'solid black 1px',
-  },
 };
 
 export default Highlights;

@@ -1,19 +1,34 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {
+  Wrapper,
+  HomeType,
+  HomeTitle,
+  HomeLocation,
+  Features,
+  Feature,
+  StyledImage,
+  OwnerName,
+} from './styles/Summary.styles';
 
 const Summary = props => (
-  <div id="summary" style={props.border}><h1>Summary</h1>
-    <div id="home-type"><h6>{props.home_type}</h6></div>
-    <div id="home-title"><h2>{props.title}</h2></div>
-    <div id="home-location"><h5>{props.location}</h5></div>
-    <div id="owner-info"><img src={props.owner.avatar_url} alt="avatar not found" /><br />{props.owner.name}</div>
-    <div id="property-features">
-      Guests: {props.property_features.guests}<br />
-      Bedrooms: {props.property_features.bedrooms}<br />
-      Beds: {props.property_features.beds}<br />
-      Baths: {props.property_features.baths}<br />
-    </div>
-  </div>
+  <Wrapper direction="row">
+    <Wrapper direction="column">
+      <HomeType>{props.home_type}</HomeType>
+      <HomeTitle>{props.title}</HomeTitle>
+      <HomeLocation>{props.location}</HomeLocation>
+      <Features>
+        <Feature>Guests: {props.property_features.guests}</Feature>
+        <Feature>Bedrooms: {props.property_features.bedrooms}</Feature>
+        <Feature>Beds: {props.property_features.beds}</Feature>
+        <Feature>Baths: {props.property_features.baths}</Feature>
+      </Features>
+    </Wrapper>
+    <Wrapper direction="column">
+      <StyledImage src={props.owner.avatar_url} alt="avatar not found" />
+      <OwnerName>{props.owner.name}</OwnerName>
+    </Wrapper>
+  </Wrapper>
 );
 
 Summary.propTypes = {
@@ -30,9 +45,6 @@ Summary.propTypes = {
     beds: PropTypes.number,
     baths: PropTypes.number,
   }),
-  border: PropTypes.shape({
-    border: PropTypes.string,
-  }),
 };
 
 Summary.defaultProps = {
@@ -48,9 +60,6 @@ Summary.defaultProps = {
     bedrooms: 'PropTypes.number',
     beds: 'PropTypes.number',
     baths: 'PropTypes.number',
-  },
-  border: {
-    border: 'solid black 1px',
   },
 };
 

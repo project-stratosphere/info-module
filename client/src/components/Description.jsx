@@ -1,19 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {
+  Wrapper,
+  ShortDescription,
+  MoreDescription,
+  DescriptionContainer,
+  DescriptionHead,
+  DescriptionBody,
+} from './styles/Description.styles';
 
 const Description = props => (
-  <div id="description" style={props.border}><h1>Description</h1>
-    <div id="short-description"><p>{props.short_description}</p></div>
-    <div id="more-descriptions">
+  <Wrapper>
+    <ShortDescription>{props.short_description}</ShortDescription>
+    <MoreDescription>
       {
         props.more_description.map(description => (
-          <div key={description.head}><h4>{description.head}</h4>
-            <p>{description.body}</p>
-          </div>
+          <DescriptionContainer key={description.head}>
+            <DescriptionHead>{description.head}</DescriptionHead>
+            <DescriptionBody>{description.body}</DescriptionBody>
+          </DescriptionContainer>
         ))
       }
-    </div>
-  </div>);
+    </MoreDescription>
+  </Wrapper>);
 
 Description.propTypes = {
   short_description: PropTypes.string,
@@ -21,9 +30,6 @@ Description.propTypes = {
     head: PropTypes.string,
     body: PropTypes.string,
   })),
-  border: PropTypes.shape({
-    border: PropTypes.string,
-  }),
 };
 
 Description.defaultProps = {
@@ -34,9 +40,6 @@ Description.defaultProps = {
       body: 'String',
     },
   ],
-  border: {
-    border: 'solid black 1px',
-  },
 };
 
 export default Description;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    Amenities
+  </styled.div>
+  <styled.div>
+    <styled.div
+      key="Mock Category Head"
+    >
+      <styled.div>
+        Mock Category Head
+      </styled.div>
+      <styled.div
+        key="Mock Category Item"
+      >
+        <styled.div>
+          Mock Category Item
+        </styled.div>
+        <styled.div>
+          Mock Supplemental Description
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

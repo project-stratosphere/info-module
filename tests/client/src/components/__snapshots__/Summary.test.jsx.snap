@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary should render correctly 1`] = `
+<styled.div
+  direction="row"
+>
+  <styled.div
+    direction="column"
+  >
+    <styled.div>
+      Mock Home Type
+    </styled.div>
+    <styled.div>
+      Mock Title
+    </styled.div>
+    <styled.div>
+      Mock Location
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        Guests: 
+        1
+      </styled.div>
+      <styled.div>
+        Bedrooms: 
+        1
+      </styled.div>
+      <styled.div>
+        Beds: 
+        1
+      </styled.div>
+      <styled.div>
+        Baths: 
+        1
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    direction="column"
+  >
+    <styled.img
+      alt="avatar not found"
+      src="MockAvatarURL"
+    />
+    <styled.div>
+      Mock Owner Name
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

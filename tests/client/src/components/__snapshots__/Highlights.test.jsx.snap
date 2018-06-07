@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlights should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    Short Description
+  </styled.div>
+  <styled.div>
+    <styled.div
+      key="String"
+    >
+      <styled.div>
+        String
+      </styled.div>
+      <styled.div>
+        String
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
