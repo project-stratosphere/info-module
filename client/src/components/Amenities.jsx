@@ -1,24 +1,37 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
+import {
+  Wrapper,
+  Title,
+  AmenitiesContainer,
+  CategoryContainer,
+  CategoryHead,
+  CategoryItemContainer,
+  AmenityDescription,
+  Supplemental,
+} from './styles/Amenities.styles';
 
 const Amenities = props => (
-  <div id="amenities" style={props.border}><h1>Amenities</h1>
-    {
-      props.amenities.items.map(item => (
-        <div key={item.category_head}><h3>{item.category_head}</h3>
-          {
-            item.category_items.map(categoryItem => (
-              <div key={categoryItem.amenity_description}>
-                <h4>{categoryItem.amenity_description}</h4>
-                <p>{categoryItem.supplemental_description}</p>
-              </div>
-            ))
-          }
-        </div>
-      ))
-    }
-  </div>);
+  <Wrapper>
+    <Title>Amenities</Title>
+    <AmenitiesContainer>
+      {
+        props.amenities.items.map(item => (
+          <CategoryContainer key={item.category_head}>
+            <CategoryHead>{item.category_head}</CategoryHead>
+            {
+              item.category_items.map(categoryItem => (
+                <CategoryItemContainer key={categoryItem.amenity_description}>
+                  <AmenityDescription>{categoryItem.amenity_description}</AmenityDescription>
+                  <Supplemental>{categoryItem.supplemental_description}</Supplemental>
+                </CategoryItemContainer>
+              ))
+            }
+          </CategoryContainer>
+        ))
+      }
+    </AmenitiesContainer>
+  </Wrapper>);
 
 Amenities.propTypes = {
   amenities: PropTypes.shape({
@@ -30,9 +43,6 @@ Amenities.propTypes = {
         supplemental_description: PropTypes.string,
       })),
     })),
-  }),
-  border: PropTypes.shape({
-    border: PropTypes.string,
   }),
 };
 
@@ -50,9 +60,6 @@ Amenities.defaultProps = {
         ],
       },
     ],
-  },
-  border: {
-    border: 'solid black 1px',
   },
 };
 
