@@ -1,63 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Summary should render correctly 1`] = `
-<div
-  id="summary"
-  style={
-    Object {
-      "border": "solid black 1px",
-    }
-  }
+<styled.div
+  direction="row"
 >
-  <h1>
-    Summary
-  </h1>
-  <div
-    id="home-type"
+  <styled.div
+    direction="column"
   >
-    <h6>
+    <styled.div>
       Mock Home Type
-    </h6>
-  </div>
-  <div
-    id="home-title"
-  >
-    <h2>
+    </styled.div>
+    <styled.div>
       Mock Title
-    </h2>
-  </div>
-  <div
-    id="home-location"
-  >
-    <h5>
+    </styled.div>
+    <styled.div>
       Mock Location
-    </h5>
-  </div>
-  <div
-    id="owner-info"
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        Guests: 
+        1
+      </styled.div>
+      <styled.div>
+        Bedrooms: 
+        1
+      </styled.div>
+      <styled.div>
+        Beds: 
+        1
+      </styled.div>
+      <styled.div>
+        Baths: 
+        1
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    direction="column"
   >
-    <img
+    <styled.img
       alt="avatar not found"
       src="MockAvatarURL"
     />
-    <br />
-    Mock Owner Name
-  </div>
-  <div
-    id="property-features"
-  >
-    Guests: 
-    1
-    <br />
-    Bedrooms: 
-    1
-    <br />
-    Beds: 
-    1
-    <br />
-    Baths: 
-    1
-    <br />
-  </div>
-</div>
+    <styled.div>
+      Mock Owner Name
+    </styled.div>
+  </styled.div>
+</styled.div>
 `;

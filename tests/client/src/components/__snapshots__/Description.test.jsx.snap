@@ -1,37 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description should render correctly 1`] = `
-<div
-  id="description"
-  style={
-    Object {
-      "border": "solid black 1px",
-    }
-  }
->
-  <h1>
-    Description
-  </h1>
-  <div
-    id="short-description"
-  >
-    <p>
-      Mock Short Description
-    </p>
-  </div>
-  <div
-    id="more-descriptions"
-  >
-    <div
+<styled.div>
+  <styled.div>
+    Mock Short Description
+  </styled.div>
+  <styled.div>
+    <styled.div
       key="Mock Head"
     >
-      <h4>
+      <styled.div>
         Mock Head
-      </h4>
-      <p>
+      </styled.div>
+      <styled.div>
         Mock Body
-      </p>
-    </div>
-  </div>
-</div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
 `;

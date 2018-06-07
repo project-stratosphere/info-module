@@ -1,37 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Highlights should render correctly 1`] = `
-<div
-  id="description"
-  style={
-    Object {
-      "border": "solid black 1px",
-    }
-  }
->
-  <h1>
-    Description
-  </h1>
-  <div
-    id="short-description"
-  >
-    <p>
-      Short Description
-    </p>
-  </div>
-  <div
-    id="more-descriptions"
-  >
-    <div
+<styled.div>
+  <styled.div>
+    Short Description
+  </styled.div>
+  <styled.div>
+    <styled.div
       key="String"
     >
-      <h4>
+      <styled.div>
         String
-      </h4>
-      <p>
+      </styled.div>
+      <styled.div>
         String
-      </p>
-    </div>
-  </div>
-</div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
 `;

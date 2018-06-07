@@ -1,15 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description should render correctly 1`] = `
-<div
-  id="content"
->
+<styled.div>
   <Summary
-    border={
-      Object {
-        "border": "solid black 1px",
-      }
-    }
     home_type="Intelligent HOUSE"
     location="Rosenbaummouth"
     owner={
@@ -29,11 +22,6 @@ exports[`Description should render correctly 1`] = `
     title="Practical Fantastic Home"
   />
   <Highlights
-    border={
-      Object {
-        "border": "solid black 1px",
-      }
-    }
     highlights={
       Array [
         Object {
@@ -52,11 +40,6 @@ exports[`Description should render correctly 1`] = `
     }
   />
   <Description
-    border={
-      Object {
-        "border": "solid black 1px",
-      }
-    }
     more_description={
       Array [
         Object {
@@ -96,11 +79,6 @@ exports[`Description should render correctly 1`] = `
         ],
       }
     }
-    border={
-      Object {
-        "border": "solid black 1px",
-      }
-    }
   />
-</div>
+</styled.div>
 `;
