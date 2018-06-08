@@ -20,6 +20,7 @@ export const ModalContent = styled.div`
 
 export const Title = styled.div`
   order: 1;
+  color: #404040;
   font-weight: bold;
   font-size: 1.5em;
   margin-bottom: 1em;
@@ -27,6 +28,7 @@ export const Title = styled.div`
 
 export const AmenitiesContainer = styled.div`
   display: flex;
+  color: #4d4d4d;
   flex-direction: column;
   order: 2;
 `;
@@ -38,6 +40,7 @@ export const CategoryContainer = styled.div`
 
 export const CategoryHead = styled.div`
   order: 1;
+  color: #404040;
   font-weight: bold;
   font-size: 1.25em;
   margin-bottom: 0.75em;
@@ -45,7 +48,8 @@ export const CategoryHead = styled.div`
 
 export const CategoryItemContainer = styled.div`
   order: 2;
-  border-bottom: solid black 1px;
+  font-weight: lighter;
+  border-bottom: solid #cccccc 1px;
   margin-bottom: 0.75em;
 `;
 
@@ -66,13 +70,15 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
+  padding-top: 5em;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 `;
 
 export const PreviewTitle = styled.div`
+  color: #404040;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.1em;
   width: 100%;
   margin-bottom: 0.5em;
 `;
@@ -87,11 +93,21 @@ export const PreviewContainer = styled.div`
 `;
 
 export const PreviewAmenity = styled.div`
-  width: 50%;
+  color: #4d4d4d;
+  width: 40%;
+  margin: 1em 0 1em 0;
+  font-weight: lighter;
+  text-transform: capitalize;
 `;
 
 export const ShowAll = styled.div`
-  width: 100%;
-  margin-top: 0.5em;
-  color: blue;
+  width: 50%;
+  color: #009999;
+  margin-top: 1em;
+  font-weight: bold;
+  width: 50%;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  };
 `;

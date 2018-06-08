@@ -35,13 +35,13 @@ export default class Description extends React.Component {
           onClick={this.toggleDisplay}
           hidden={!this.state.hidden}
         >
-          Read more about the space
+          Read more about the space &#9660;
         </Clickable>
         <Clickable
           onClick={this.toggleDisplay}
           hidden={this.state.hidden}
         >
-          Hide
+          Hide &#9650;
         </Clickable>
         <MoreDescription
           hidden={this.state.hidden}

@@ -26,6 +26,7 @@ export const HighlightsWrapper = styled.div`
 `;
 
 export const Highlight = styled.div`
-  font-weight: bold;
   margin-bottom: 1.5em;
+  color: #404040;
+  font-weight: bold;
 `;
