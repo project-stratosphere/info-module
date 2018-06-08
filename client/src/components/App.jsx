@@ -59,7 +59,9 @@ export default class App extends React.Component {
           owner={this.state.generalInfo.owner}
           property_features={this.state.generalInfo.property_features}
         />
-        <Highlights highlights={this.state.generalInfo.highlights} />
+        <Highlights
+          highlights={this.state.generalInfo.highlights}
+        />
         <Description
           short_description={this.state.generalInfo.short_description}
           more_description={this.state.generalInfo.more_description}

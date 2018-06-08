@@ -15,7 +15,6 @@ export const ShortDescription = styled.div`
 
 export const MoreDescription = styled.div`
   order: 2;
-  display: flex;
   flex-direction: column;
 `;
 
@@ -32,4 +31,9 @@ export const DescriptionHead = styled.div`
 `;
 export const DescriptionBody = styled.div`
   order: 2;
+`;
+
+export const Clickable = styled.div`
+  order: 3;
+  color: blue;
 `;

@@ -7,22 +7,64 @@ import {
   DescriptionContainer,
   DescriptionHead,
   DescriptionBody,
+  Clickable,
 } from './styles/Description.styles';
 
-const Description = props => (
-  <Wrapper>
-    <ShortDescription>{props.short_description}</ShortDescription>
-    <MoreDescription>
-      {
-        props.more_description.map(description => (
-          <DescriptionContainer key={description.head}>
-            <DescriptionHead>{description.head}</DescriptionHead>
-            <DescriptionBody>{description.body}</DescriptionBody>
-          </DescriptionContainer>
-        ))
-      }
-    </MoreDescription>
-  </Wrapper>);
+export default class Description extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+    this.state = {
+      hidden: true,
+    };
+  }
+
+  toggleDisplay() {
+    this.setState({
+      hidden: !this.state.hidden,
+    });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <ShortDescription>
+          {this.props.short_description}
+        </ShortDescription>
+        <Clickable
+          onClick={this.toggleDisplay}
+          hidden={!this.state.hidden}
+        >
+          Read more about the space
+        </Clickable>
+        <Clickable
+          onClick={this.toggleDisplay}
+          hidden={this.state.hidden}
+        >
+          Hide
+        </Clickable>
+        <MoreDescription
+          hidden={this.state.hidden}
+        >
+          {
+            this.props.more_description.map(description => (
+              <DescriptionContainer
+                key={description.head}
+              >
+                <DescriptionHead>
+                  {description.head}
+                </DescriptionHead>
+                <DescriptionBody>
+                  {description.body}
+                </DescriptionBody>
+              </DescriptionContainer>
+            ))
+          }
+        </MoreDescription>
+      </Wrapper>
+    );
+  }
+}
 
 Description.propTypes = {
   short_description: PropTypes.string,
@@ -41,5 +83,3 @@ Description.defaultProps = {
     },
   ],
 };
-
-export default Description;
