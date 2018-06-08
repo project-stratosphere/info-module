@@ -43,32 +43,46 @@ export default class Amenities extends React.Component {
     return (
       <Wrapper>
         <PreviewContainer>
-          <PreviewTitle>Amenitites</PreviewTitle>
+          <PreviewTitle>
+            Amenitites
+          </PreviewTitle>
           {
             this.props.amenities.items.map(item => (
-              <PreviewAmenity key={item.category_head}>
+              <PreviewAmenity
+                key={item.category_head}
+              >
                 {item.category_items[0].amenity_description}
               </PreviewAmenity>
             ))
           }
-          <ShowAll onClick={this.handleAmenitiesDisplay}>Show all amenities</ShowAll>
+          <ShowAll
+            onClick={this.handleAmenitiesDisplay}
+          >
+            Show all amenities
+          </ShowAll>
         </PreviewContainer>
         <Modal
           displayModal={this.state.displayModal}
           onClick={this.handleAmenitiesHide}
         >
           <ModalContent>
-            <Title>Amenities</Title>
+            <Title>
+              Amenities
+            </Title>
             <AmenitiesContainer>
               {
                 this.props.amenities.items.map(item => (
-                  <CategoryContainer key={item.category_head}>
+                  <CategoryContainer
+                    key={item.category_head}
+                  >
                     <CategoryHead>
                       {item.category_head}
                     </CategoryHead>
                     {
                       item.category_items.map(categoryItem => (
-                        <CategoryItemContainer key={categoryItem.amenity_description}>
+                        <CategoryItemContainer
+                          key={categoryItem.amenity_description}
+                        >
                           <AmenityDescription>
                             {categoryItem.amenity_description}
                           </AmenityDescription>

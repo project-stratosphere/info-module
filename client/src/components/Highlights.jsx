@@ -9,11 +9,17 @@ import {
 
 const Highlights = props => (
   <Wrapper>
-    <Title>Home Highlights</Title>
+    <Title>
+      Home Highlights
+    </Title>
     <HighlightsWrapper>
       {
         props.highlights.map(highlight => (
-          <Highlight key={highlight.head}>{highlight.head}</Highlight>
+          <Highlight
+            key={highlight.head}
+          >
+            {highlight.head}
+          </Highlight>
         ))
       }
     </HighlightsWrapper>

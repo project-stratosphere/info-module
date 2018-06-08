@@ -12,21 +12,46 @@ import {
 } from './styles/Summary.styles';
 
 const Summary = props => (
-  <Wrapper direction="row">
-    <Wrapper direction="column">
-      <HomeType>{props.home_type}</HomeType>
-      <HomeTitle>{props.title}</HomeTitle>
-      <HomeLocation>{props.location}</HomeLocation>
+  <Wrapper
+    direction="row"
+  >
+    <Wrapper
+      direction="column"
+    >
+      <HomeType>
+        {props.home_type}
+      </HomeType>
+      <HomeTitle>
+        {props.title}
+      </HomeTitle>
+      <HomeLocation>
+        {props.location}
+      </HomeLocation>
       <Features>
-        <Feature>Guests: {props.property_features.guests}</Feature>
-        <Feature>Bedrooms: {props.property_features.bedrooms}</Feature>
-        <Feature>Beds: {props.property_features.beds}</Feature>
-        <Feature>Baths: {props.property_features.baths}</Feature>
+        <Feature>
+          Guests: {props.property_features.guests}
+        </Feature>
+        <Feature>
+          Bedrooms: {props.property_features.bedrooms}
+        </Feature>
+        <Feature>
+          Beds: {props.property_features.beds}
+        </Feature>
+        <Feature>
+          Baths: {props.property_features.baths}
+        </Feature>
       </Features>
     </Wrapper>
-    <Wrapper direction="column">
-      <StyledImage src={props.owner.avatar_url} alt="avatar not found" />
-      <OwnerName>{props.owner.name}</OwnerName>
+    <Wrapper
+      direction="column"
+    >
+      <StyledImage
+        src={props.owner.avatar_url}
+        alt="avatar not found"
+      />
+      <OwnerName>
+        {props.owner.name}
+      </OwnerName>
     </Wrapper>
   </Wrapper>
 );
