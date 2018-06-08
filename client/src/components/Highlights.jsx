@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Highlight from './Highlight.jsx';
 import {
   Wrapper,
   Title,
   HighlightsWrapper,
-  Highlight,
 } from './styles/Highlights.styles';
 
 const Highlights = props => (
@@ -17,9 +17,8 @@ const Highlights = props => (
         props.highlights.map(highlight => (
           <Highlight
             key={highlight.head}
-          >
-            {highlight.head}
-          </Highlight>
+            highlight={highlight}
+          />
         ))
       }
     </HighlightsWrapper>

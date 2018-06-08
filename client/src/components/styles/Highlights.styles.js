@@ -24,9 +24,3 @@ export const HighlightsWrapper = styled.div`
   order: 2;
   margin: 1em;
 `;
-
-export const Highlight = styled.div`
-  margin-bottom: 1.5em;
-  color: #404040;
-  font-weight: bold;
-`;
