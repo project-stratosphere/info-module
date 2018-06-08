@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  order: 2;
+  order: 3;
   display: flex;
   flex-direction: column;
   margin: 1em;
-  font-family: 'Raleway', sans-serif;
 `;
 
 export const ShortDescription = styled.div`

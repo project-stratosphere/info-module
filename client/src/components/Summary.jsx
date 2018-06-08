@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
+  GuestsSVG,
+  BedroomsSVG,
+  BedsSVG,
+  BathsSVG,
+} from './SVG.jsx';
+import {
   Wrapper,
   HomeType,
   HomeTitle,
@@ -9,6 +15,7 @@ import {
   Feature,
   StyledImage,
   OwnerName,
+  SVGContainer,
 } from './styles/Summary.styles';
 
 const Summary = props => (
@@ -29,16 +36,28 @@ const Summary = props => (
       </HomeLocation>
       <Features>
         <Feature>
-          Guests: {props.property_features.guests}
+          <SVGContainer>
+            <GuestsSVG />
+          </SVGContainer>
+          {props.property_features.guests} Guests
         </Feature>
         <Feature>
-          Bedrooms: {props.property_features.bedrooms}
+          <SVGContainer>
+            <BedroomsSVG />
+          </SVGContainer>
+          {props.property_features.bedrooms} Bedrooms
         </Feature>
         <Feature>
-          Beds: {props.property_features.beds}
+          <SVGContainer>
+            <BedsSVG />
+          </SVGContainer>
+          {props.property_features.beds} Beds
         </Feature>
         <Feature>
-          Baths: {props.property_features.baths}
+          <SVGContainer>
+            <BathsSVG />
+          </SVGContainer>
+          {props.property_features.baths} Baths
         </Feature>
       </Features>
     </Wrapper>

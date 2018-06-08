@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   order: 4;
   display: flex;
   flex-direction: column;
-  font-family: 'Raleway', sans-serif;
 `;
 
 export const ModalContent = styled.div`

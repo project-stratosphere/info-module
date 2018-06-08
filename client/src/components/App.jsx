@@ -12,6 +12,7 @@ const fakeAmenities = JSON.parse('{"id":1,"items":[{"category_head":"Industrial"
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: "Neuzeit", sans-serif;
 `;
 
 export default class App extends React.Component {
