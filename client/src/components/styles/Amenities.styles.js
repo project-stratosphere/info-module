@@ -5,6 +5,13 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
+`;
+
+export const ModalContent = styled.div`
+  order: 4;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
   background-color: white;
   margin: auto;
   padding: 2em;
@@ -50,4 +57,42 @@ export const AmenityDescription = styled.div`
 
 export const Supplemental = styled.div`
   margin-bottom: 0.75em;
+`;
+export const Modal = styled.div`
+  display: ${props => props.displayModal};
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+`;
+
+export const PreviewTitle = styled.div`
+  font-weight: bold;
+  font-size: 1.5em;
+  width: 100%;
+  margin-bottom: 0.5em;
+`;
+
+export const PreviewContainer = styled.div`
+  order: 4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+
+`;
+
+export const PreviewAmenity = styled.div`
+  width: 50%;
+`;
+
+export const ShowAll = styled.div`
+  width: 100%;
+  margin-top: 0.5em;
+  color: blue;
 `;
