@@ -8,6 +8,7 @@ import {
   Clickable,
   HelpfulText,
   ThanksContainer,
+  HighlightText,
 } from './styles/Highlight.styles';
 
 export default class Highlight extends React.Component {
@@ -28,7 +29,19 @@ export default class Highlight extends React.Component {
   render() {
     return (
       <Wrapper>
-        {this.props.highlight.head}
+        <HighlightText>
+          <span
+            className="main"
+          >
+            {this.props.highlight.head}
+          </span>
+            &#8231;
+          <span
+            className="description"
+          >
+            {this.props.highlight.body}
+          </span>
+        </HighlightText>
         <span
           hidden={this.state.display}
         >
@@ -44,7 +57,7 @@ export default class Highlight extends React.Component {
               </SVGContainer>
             </Clickable>
             <span>
-              .
+              &#8231;
             </span>
             <Clickable
               onClick={this.toggleDisplay}

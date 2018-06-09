@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   margin-bottom: 1.5em;
   color: #404040;
-  font-weight: bold;
 `;
 
 export const HelpfulContainer = styled.div`
@@ -39,4 +38,15 @@ export const HelpfulText = styled.div`
   font-weight: 200;
   margin-right: 0.5em;
   padding-top: 0.2em;
+`;
+
+export const HighlightText = styled.div`
+  .main {
+    font-weight: bold;
+    padding-right: 0.5em;
+  }
+  .description {
+    font-weight: lighter;
+    padding-left: 0.5em;
+  }
 `;
