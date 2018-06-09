@@ -8,7 +8,7 @@ import {
   GuestSVG,
   BnbSVG,
   SafetySVG,
-} from './SVG.jsx';
+} from './SVG';
 import {
   Wrapper,
   Title,

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Highlight from './Highlight.jsx';
+import Highlight from './Highlight';
 import {
   Wrapper,
   Title,

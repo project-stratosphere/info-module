@@ -5,7 +5,7 @@ import {
   BedroomsSVG,
   BedsSVG,
   BathsSVG,
-} from './SVG.jsx';
+} from './SVG';
 import {
   Wrapper,
   HomeType,

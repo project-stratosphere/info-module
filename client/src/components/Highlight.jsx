@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ThumbSVG } from './SVG.jsx';
+import { ThumbSVG } from './SVG';
 import { SVGContainer } from './styles/Summary.styles';
 import {
   Wrapper,
