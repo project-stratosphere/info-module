@@ -14,7 +14,7 @@ export const ModalContent = styled.div`
   background-color: white;
   margin: auto;
   padding: 2em;
-  border: 1px solid #888;
+  box-shadow: 0 0 1px grey;
   width: 80%;
 `;
 
@@ -70,9 +70,10 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding-top: 5em;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  padding-top: 1em;
+  padding-bottom: 50px;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.4);
 `;
 
 export const PreviewTitle = styled.div`
@@ -105,7 +106,7 @@ export const ShowAll = styled.div`
   color: #009999;
   margin-top: 1em;
   font-weight: bold;
-  width: 50%;
+  width: 100%;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
