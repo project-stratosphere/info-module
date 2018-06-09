@@ -9,7 +9,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "postinstall": "webpack && npm run load-data",
+    "postinstall": "webpack -d && npm run load-data",
     "test": "jest --forceExit",
     "start": "node server/index.js",
     "load-data": "node database/load.js"

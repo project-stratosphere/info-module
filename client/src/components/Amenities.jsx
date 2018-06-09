@@ -65,6 +65,14 @@ const renderIcon = (category) => {
   );
 };
 
+const amenitiesCount = (amenities) => {
+  let count = 0;
+  for (let i = 0; i < amenities.length; i += 1) {
+    count += amenities[i].category_items.length;
+  }
+  return count;
+};
+
 export default class Amenities extends React.Component {
   constructor(props) {
     super(props);
@@ -107,7 +115,7 @@ export default class Amenities extends React.Component {
           <ShowAll
             onClick={this.handleAmenitiesDisplay}
           >
-            Show all amenities
+            Show all {amenitiesCount(this.props.amenities.items)} amenities
           </ShowAll>
         </PreviewContainer>
         <Modal

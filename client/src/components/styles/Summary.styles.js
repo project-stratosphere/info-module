@@ -13,6 +13,7 @@ export const HomeType = styled.div`
   font-size: 0.75em;
   font-weight: bold;
   color: #660000;
+  cursor: pointer;
 `;
 
 export const HomeTitle = styled.div`
@@ -28,6 +29,7 @@ export const HomeLocation = styled.div`
   font-size: 1em;
   font-weight: lighter;
   color: #4d4d4d;
+  cursor: pointer;
 `;
 
 export const Features = styled.div`
@@ -51,7 +53,7 @@ export const StyledImage = styled.img`
   width: 4em;
   height: auto;
   border-radius: 100%;
-
+  cursor: pointer;
 `;
 
 export const OwnerName = styled.div`
