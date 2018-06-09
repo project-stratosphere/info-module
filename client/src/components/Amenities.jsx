@@ -1,5 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { SVGContainer } from './styles/Summary.styles';
+import {
+  BasicSVG,
+  DiningSVG,
+  FacilitiesSVG,
+  GuestSVG,
+  BnbSVG,
+  SafetySVG,
+} from './SVG.jsx';
 import {
   Wrapper,
   Title,
@@ -16,6 +25,45 @@ import {
   PreviewTitle,
   ModalContent,
 } from './styles/Amenities.styles';
+
+const renderIcon = (category) => {
+  if (category === 'Dining') {
+    return (
+      <SVGContainer>
+        <DiningSVG />
+      </SVGContainer>
+    );
+  } else if (category === 'Facilities') {
+    return (
+      <SVGContainer>
+        <FacilitiesSVG />
+      </SVGContainer>
+    );
+  } else if (category === 'Guest access') {
+    return (
+      <SVGContainer>
+        <GuestSVG />
+      </SVGContainer>
+    );
+  } else if (category === 'Bed and bath') {
+    return (
+      <SVGContainer>
+        <BnbSVG />
+      </SVGContainer>
+    );
+  } else if (category === 'Safety features') {
+    return (
+      <SVGContainer>
+        <SafetySVG />
+      </SVGContainer>
+    );
+  }
+  return (
+    <SVGContainer>
+      <BasicSVG />
+    </SVGContainer>
+  );
+};
 
 export default class Amenities extends React.Component {
   constructor(props) {
@@ -51,6 +99,7 @@ export default class Amenities extends React.Component {
               <PreviewAmenity
                 key={item.category_head}
               >
+                {renderIcon(item.category_head)}
                 {item.category_items[0].amenity_description}
               </PreviewAmenity>
             ))

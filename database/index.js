@@ -6,6 +6,7 @@ mongoose.connect('mongodb://localhost/properties');
 const generalInfoSchema = mongoose.Schema({
   id: { type: Number, unique: true },
   title: String,
+  location: String,
   home_type: String,
   owner: Object,
   property_features: Object,
@@ -15,7 +16,6 @@ const generalInfoSchema = mongoose.Schema({
 });
 const amenitiesSchema = mongoose.Schema({
   id: { type: Number, unique: true },
-  head: String,
   items: Array,
 });
 const GeneralInfo = mongoose.model('GeneralInfo', generalInfoSchema);

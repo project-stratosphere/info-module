@@ -27,6 +27,7 @@ export const Clickable = styled.div`
   padding: 0.5em;
   &:hover {
     color: #009999;
+    cursor: pointer;
     path {
       stroke: #009999;
       fill: #009999;
