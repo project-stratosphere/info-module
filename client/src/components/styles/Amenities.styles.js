@@ -85,7 +85,7 @@ export const PreviewTitle = styled.div`
 `;
 
 export const PreviewContainer = styled.div`
-  order: 4;
+  order: 5;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

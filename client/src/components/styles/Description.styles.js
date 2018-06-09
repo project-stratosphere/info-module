@@ -17,8 +17,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1em;
-  padding-bottom: 2em;
-  border-bottom: solid #cccccc 1px;
+  padding-bottom: 1em;
 `;
 
 export const ShortDescription = styled.div`
