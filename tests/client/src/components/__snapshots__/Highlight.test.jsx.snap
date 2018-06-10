@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlight should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <span
+      className="main"
+    >
+      String
+    </span>
+    ‧
+    <span
+      className="description"
+    >
+      String
+    </span>
+  </styled.div>
+  <span
+    hidden={false}
+  >
+    <styled.div>
+      <styled.div
+        className="helpful"
+        onClick={[Function]}
+      >
+        <styled.div>
+          Helpful
+        </styled.div>
+        <styled.div>
+          <ThumbSVG />
+        </styled.div>
+      </styled.div>
+      <span>
+        ‧
+      </span>
+      <styled.div
+        className="not-helpful"
+        onClick={[Function]}
+      >
+        <styled.div>
+          Not Helpful
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </span>
+  <span
+    hidden={true}
+  >
+    <styled.div>
+      <styled.div>
+        Thanks for your feedback.
+      </styled.div>
+    </styled.div>
+  </span>
+</styled.div>
+`;

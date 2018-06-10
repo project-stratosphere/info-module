@@ -1,25 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Description should render correctly 1`] = `
+exports[`Amenities should render correctly 1`] = `
 <styled.div>
   <styled.div>
-    Amenities
-  </styled.div>
-  <styled.div>
+    <styled.div>
+      Amenitites
+    </styled.div>
     <styled.div
       key="Mock Category Head"
     >
       <styled.div>
-        Mock Category Head
+        <BasicSVG />
       </styled.div>
-      <styled.div
-        key="Mock Category Item"
-      >
-        <styled.div>
-          Mock Category Item
-        </styled.div>
-        <styled.div>
-          Mock Supplemental Description
+      Mock Category Item
+    </styled.div>
+    <styled.div
+      className="modal-display"
+      onClick={[Function]}
+    >
+      Show all 
+      1
+       amenities
+    </styled.div>
+  </styled.div>
+  <styled.div
+    className="modal-hide"
+    displayModal="none"
+    onClick={[Function]}
+  >
+    <styled.div>
+      <styled.div>
+        Amenities
+      </styled.div>
+      <styled.div>
+        <styled.div
+          key="Mock Category Head"
+        >
+          <styled.div>
+            Mock Category Head
+          </styled.div>
+          <styled.div
+            key="Mock Category Item"
+          >
+            <styled.div>
+              Mock Category Item
+            </styled.div>
+            <styled.div>
+              Mock Supplemental Description
+            </styled.div>
+          </styled.div>
         </styled.div>
       </styled.div>
     </styled.div>

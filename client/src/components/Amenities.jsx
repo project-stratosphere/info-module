@@ -114,6 +114,7 @@ export default class Amenities extends React.Component {
           }
           <ShowAll
             onClick={this.handleAmenitiesDisplay}
+            className="modal-display"
           >
             Show all {amenitiesCount(this.props.amenities.items)} amenities
           </ShowAll>
@@ -121,6 +122,7 @@ export default class Amenities extends React.Component {
         <Modal
           displayModal={this.state.displayModal}
           onClick={this.handleAmenitiesHide}
+          className="modal-hide"
         >
           <ModalContent>
             <Title>

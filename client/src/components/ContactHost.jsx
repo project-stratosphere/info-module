@@ -38,12 +38,14 @@ export default class ContactHost extends React.Component {
       <Wrapper>
         <StyledButton
           onClick={this.handleModalDisplay}
+          className="modal-display"
         >
           Contact host
         </StyledButton>
         <Modal
           onClick={this.handleModalHide}
           displayModal={this.state.displayModal}
+          className="modal-hide"
         >
           <ModalContent>
             <FacebookButton>

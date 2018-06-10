@@ -48,6 +48,7 @@ export default class Highlight extends React.Component {
           <HelpfulContainer>
             <Clickable
               onClick={this.toggleDisplay}
+              className="helpful"
             >
               <HelpfulText>
                 Helpful
@@ -61,6 +62,7 @@ export default class Highlight extends React.Component {
             </span>
             <Clickable
               onClick={this.toggleDisplay}
+              className="not-helpful"
             >
               <HelpfulText>
                 Not Helpful
