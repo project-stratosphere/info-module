@@ -18,20 +18,32 @@ exports[`Summary should render correctly 1`] = `
     </styled.div>
     <styled.div>
       <styled.div>
-        Guests: 
+        <styled.div>
+          <GuestsSVG />
+        </styled.div>
         1
+         Guests
       </styled.div>
       <styled.div>
-        Bedrooms: 
+        <styled.div>
+          <BedroomsSVG />
+        </styled.div>
         1
+         Bedrooms
       </styled.div>
       <styled.div>
-        Beds: 
+        <styled.div>
+          <BedsSVG />
+        </styled.div>
         1
+         Beds
       </styled.div>
       <styled.div>
-        Baths: 
+        <styled.div>
+          <BathsSVG />
+        </styled.div>
         1
+         Baths
       </styled.div>
     </styled.div>
   </styled.div>

@@ -1,11 +1,18 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/properties');
+let dbURI = 'mongodb://localhost/properties';
+
+if (process.env.USER && process.env.PASSWORD) {
+  dbURI = `mongodb://${process.env.USER}:${process.env.PASSWORD}@ds016718.mlab.com:16718/airbnc`;
+}
+
+mongoose.connect(dbURI);
 
 const generalInfoSchema = mongoose.Schema({
   id: { type: Number, unique: true },
   title: String,
+  location: String,
   home_type: String,
   owner: Object,
   property_features: Object,
@@ -15,7 +22,6 @@ const generalInfoSchema = mongoose.Schema({
 });
 const amenitiesSchema = mongoose.Schema({
   id: { type: Number, unique: true },
-  head: String,
   items: Array,
 });
 const GeneralInfo = mongoose.model('GeneralInfo', generalInfoSchema);

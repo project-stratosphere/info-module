@@ -5,7 +5,23 @@ exports[`Description should render correctly 1`] = `
   <styled.div>
     Mock Short Description
   </styled.div>
-  <styled.div>
+  <styled.div
+    className="read-more"
+    hidden={false}
+    onClick={[Function]}
+  >
+    Read more about the space ▼
+  </styled.div>
+  <styled.div
+    className="hide"
+    hidden={true}
+    onClick={[Function]}
+  >
+    Hide ▲
+  </styled.div>
+  <styled.div
+    hidden={true}
+  >
     <styled.div
       key="Mock Head"
     >

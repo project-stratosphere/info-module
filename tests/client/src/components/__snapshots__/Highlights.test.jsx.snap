@@ -3,19 +3,18 @@
 exports[`Highlights should render correctly 1`] = `
 <styled.div>
   <styled.div>
-    Short Description
+    Home Highlights
   </styled.div>
   <styled.div>
-    <styled.div
-      key="String"
-    >
-      <styled.div>
-        String
-      </styled.div>
-      <styled.div>
-        String
-      </styled.div>
-    </styled.div>
+    <Highlight
+      highlight={
+        Object {
+          "body": "Mock Body",
+          "head": "Mock Head",
+        }
+      }
+      key="Mock Head"
+    />
   </styled.div>
 </styled.div>
 `;

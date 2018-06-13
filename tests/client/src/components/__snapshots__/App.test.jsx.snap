@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Description should render correctly 1`] = `
+exports[`App should render correctly 1`] = `
 <styled.div>
   <Summary
     home_type="Intelligent HOUSE"
@@ -54,6 +54,7 @@ exports[`Description should render correctly 1`] = `
     }
     short_description="Harum perspiciatis minima tempore nobis sed."
   />
+  <ContactHost />
   <Amenities
     amenities={
       Object {
@@ -61,6 +62,23 @@ exports[`Description should render correctly 1`] = `
         "items": Array [
           Object {
             "category_head": "Industrial",
+            "category_items": Array [
+              Object {
+                "amenity_description": "primary",
+                "supplemental_description": "Qui ut qui reiciendis omnis id delectus assumenda.",
+              },
+              Object {
+                "amenity_description": "Pa'anga",
+                "supplemental_description": "Optio odio odio.",
+              },
+              Object {
+                "amenity_description": "Customer-focused",
+                "supplemental_description": "Vel sed ad optio et eligendi ab.",
+              },
+            ],
+          },
+          Object {
+            "category_head": "Industrial2",
             "category_items": Array [
               Object {
                 "amenity_description": "primary",

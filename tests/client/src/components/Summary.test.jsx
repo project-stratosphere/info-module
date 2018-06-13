@@ -2,7 +2,7 @@ import React from 'react';
 import Enzyme from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
-import Summary from '../../../../client/src/components/Summary.jsx';
+import Summary from '../../../../client/src/components/Summary';
 
 Enzyme.configure({ adapter: new Adapter() });
 
