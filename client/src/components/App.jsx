@@ -33,7 +33,7 @@ export default class App extends React.Component {
 
   getGeneralInfo() {
     $.ajax({
-      url: `http://localhost:3003/api/room/${this.id[0]}/general`,
+      url: `/api/rooms/${this.id[0]}/general`,
       type: 'GET',
       success: data => this.setState({
         generalInfo: JSON.parse(data),
@@ -43,7 +43,7 @@ export default class App extends React.Component {
 
   getAmenities() {
     $.ajax({
-      url: `http://localhost:3003/api/room/${this.id[0]}/amenities`,
+      url: `/api/rooms/${this.id[0]}/amenities`,
       type: 'GET',
       success: data => this.setState({
         amenities: JSON.parse(data),
