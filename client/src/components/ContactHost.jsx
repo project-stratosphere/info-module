@@ -27,10 +27,12 @@ export default class ContactHost extends React.Component {
     });
   }
 
-  handleModalHide() {
-    this.setState({
-      displayModal: 'none',
-    });
+  handleModalHide(event) {
+    if (event.target.className.split(' ')[0] === 'modal-hide') {
+      this.setState({
+        displayModal: 'none',
+      });
+    }
   }
 
   render() {

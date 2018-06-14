@@ -22,6 +22,7 @@ import {
   ShowAll,
   PreviewAmenity,
   PreviewText,
+  PreviewTextSmall,
 } from './styles/Amenities.styles';
 
 const renderIcon = (category) => {
@@ -87,10 +88,12 @@ export default class Amenities extends React.Component {
     });
   }
 
-  handleAmenitiesHide() {
-    this.setState({
-      displayModal: 'none',
-    });
+  handleAmenitiesHide(event) {
+    if (event.target.className.split(' ')[0] === 'modal-hide') {
+      this.setState({
+        displayModal: 'none',
+      });
+    }
   }
 
   render() {
@@ -143,9 +146,9 @@ export default class Amenities extends React.Component {
                           <PreviewText>
                             {categoryItem.amenity_description}
                           </PreviewText>
-                          <PreviewText>
+                          <PreviewTextSmall>
                             {categoryItem.supplemental_description}
-                          </PreviewText>
+                          </PreviewTextSmall>
                         </CategoryItemContainer>
                       ))
                     }

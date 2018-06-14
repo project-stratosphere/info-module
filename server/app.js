@@ -6,7 +6,7 @@ const db = require('../database');
 const app = express();
 
 app.use(cors());
-app.use(/(\/rooms\/100|\/rooms\/[1-9][0-9]|\/rooms\/[1-9])\b/, express.static(path.join(__dirname, '../client/dist/')));
+app.use('/rooms/:id', express.static(path.join(__dirname, '../client/dist/')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 
 app.get('/api/rooms/:id/general', (req, res) => {
@@ -36,5 +36,7 @@ app.get('/api/rooms/:id/amenities', (req, res) => {
       res.end(JSON.stringify(err));
     });
 });
+
+app.use('*', express.static(path.join(__dirname, '../client/dist/')));
 
 module.exports = app;

@@ -22,10 +22,17 @@ export const CategoryItemContainer = styled.div`
   font-weight: 200;
   border-bottom: solid ${colors.lighterGrey} 1px;
   margin-bottom: 0.75em;
+  padding: 0.75em;
 `;
 
 export const PreviewText = styled.div`
   font-size: 1.1em;
+  width: 100%;
+  margin-bottom: 0.5em;
+`;
+
+export const PreviewTextSmall = styled.div`
+  font-size: 0.9em;
   width: 100%;
   margin-bottom: 0.5em;
 `;
