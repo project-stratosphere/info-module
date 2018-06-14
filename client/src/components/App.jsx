@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactLoading from 'react-loading';
 import $ from 'jquery';
 import styled from 'styled-components';
 import Amenities from './Amenities';
@@ -7,13 +8,16 @@ import Highlights from './Highlights';
 import Summary from './Summary';
 import ContactHost from './ContactHost';
 
-const fakeGeneralInfo = JSON.parse('{"id":1,"title":"Practical Fantastic Home","location":"Rosenbaummouth","home_type":"Intelligent HOUSE","owner":{"name":"Pearl","avatar_url":"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg"},"property_features":{"guests":3,"bedrooms":0,"beds":5,"baths":4},"highlights":[{"head":"Indoor fireplace","body":""},{"head":"Self check-in","body":""},{"head":"Great check-in experience","body":""}],"short_description":"Harum perspiciatis minima tempore nobis sed.","more_description":[{"head":"The space","body":"Adipisci reprehenderit repudiandae blanditiis. Dolor assumenda consectetur fuga. Eveniet amet optio quo veniam vel at quas. Nisi et autem et magni dolorem accusamus ipsam eius laborum."},{"head":"Guest access","body":"Labore rerum sed tempore ipsa magnam odio ducimus modi error."}]}');
-const fakeAmenities = JSON.parse('{"id":1,"items":[{"category_head":"Industrial","category_items":[{"amenity_description":"primary","supplemental_description":"Qui ut qui reiciendis omnis id delectus assumenda."},{"amenity_description":"Pa\'anga","supplemental_description":"Optio odio odio."},{"amenity_description":"Customer-focused","supplemental_description":"Vel sed ad optio et eligendi ab."}]},{"category_head":"Industrial2","category_items":[{"amenity_description":"primary","supplemental_description":"Qui ut qui reiciendis omnis id delectus assumenda."},{"amenity_description":"Pa\'anga","supplemental_description":"Optio odio odio."},{"amenity_description":"Customer-focused","supplemental_description":"Vel sed ad optio et eligendi ab."}]}]}');
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
+  justify-content: center;
+`;
+
+const Loading = styled.div`
+  margin: auto;
+  width: 120px;
 `;
 
 export default class App extends React.Component {
@@ -21,8 +25,8 @@ export default class App extends React.Component {
     super(props);
     this.id = window.location.pathname.match(/[0-9]+/) || [1];
     this.state = {
-      generalInfo: fakeGeneralInfo,
-      amenities: fakeAmenities,
+      generalInfo: null,
+      amenities: null,
     };
   }
 
@@ -50,8 +54,19 @@ export default class App extends React.Component {
       }),
     });
   }
-
   render() {
+    if (this.state.generalInfo === null || this.state.amenities === null) {
+      return (
+        <Loading>
+          <ReactLoading
+            color="rgb(252, 91, 98)"
+            type="bubbles"
+            height={100}
+            width={100}
+          />
+        </Loading>
+      );
+    }
     return (
       <Wrapper>
         <Summary
