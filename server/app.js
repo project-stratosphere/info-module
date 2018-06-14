@@ -37,6 +37,4 @@ app.get('/api/rooms/:id/amenities', (req, res) => {
     });
 });
 
-app.use('*', express.static(path.join(__dirname, '../client/dist/')));
-
 module.exports = app;

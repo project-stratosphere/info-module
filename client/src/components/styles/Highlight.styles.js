@@ -11,7 +11,9 @@ export const BaseContainer = styled.div`
   color: ${colors.lighterGrey};
   flex-direction: row;
   padding: 0.5em;
+  height: 20px;
   align-items: center;
+  justify-content: left;
 `;
 
 export const Clickable = BaseContainer.extend`
