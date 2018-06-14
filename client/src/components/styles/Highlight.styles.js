@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const BaseContainer = styled.div`
   display: flex;
-  color: ${colors.lightGrey};
+  color: ${colors.lighterGrey};
   flex-direction: row;
   padding: 0.5em;
   align-items: center;

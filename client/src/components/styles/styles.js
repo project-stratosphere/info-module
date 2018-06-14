@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const colors = {
-  darkGrey: '#404040',
-  lightGrey: '#666666',
+  darkGrey: '#484848',
+  lightGrey: '#808080',
+  lighterGrey: '#666666',
   blueGreen: '#009999',
+  darkRed: '#660000',
 };
 
 export const Wrapper = styled.div`
