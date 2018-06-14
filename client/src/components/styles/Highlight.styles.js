@@ -1,35 +1,26 @@
 import styled from 'styled-components';
+import { colors } from './styles';
 
 export const Wrapper = styled.div`
   margin-bottom: 1.5em;
-  color: #404040;
+  color: ${colors.darkGrey};
 `;
 
-export const HelpfulContainer = styled.div`
+export const BaseContainer = styled.div`
   display: flex;
-  color: #666666;
+  color: ${colors.lightGrey};
   flex-direction: row;
+  padding: 0.5em;
   align-items: center;
 `;
 
-export const ThanksContainer = styled.div`
-  display: flex;
-  color: #666666;
-  flex-direction: row;
-  padding: 0.5em;
-`;
-
-export const Clickable = styled.div`
-  display: flex;
-  color: #666666;
-  flex-direction: row;
-  padding: 0.5em;
+export const Clickable = BaseContainer.extend`
   &:hover {
-    color: #009999;
+    color: ${colors.blueGreen};
     cursor: pointer;
     path {
-      stroke: #009999;
-      fill: #009999;
+      stroke: ${colors.blueGreen};
+      fill: ${colors.blueGreen};
     }
   }
 `;

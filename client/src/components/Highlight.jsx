@@ -4,10 +4,9 @@ import { ThumbSVG } from './SVG';
 import { SVGContainer } from './styles/Summary.styles';
 import {
   Wrapper,
-  HelpfulContainer,
   Clickable,
   HelpfulText,
-  ThanksContainer,
+  BaseContainer,
   HighlightText,
 } from './styles/Highlight.styles';
 
@@ -45,7 +44,7 @@ export default class Highlight extends React.Component {
         <span
           hidden={this.state.display}
         >
-          <HelpfulContainer>
+          <BaseContainer>
             <Clickable
               onClick={this.toggleDisplay}
               className="helpful"
@@ -57,9 +56,7 @@ export default class Highlight extends React.Component {
                 <ThumbSVG />
               </SVGContainer>
             </Clickable>
-            <span>
-              &#8231;
-            </span>
+            &#8231;
             <Clickable
               onClick={this.toggleDisplay}
               className="not-helpful"
@@ -68,16 +65,16 @@ export default class Highlight extends React.Component {
                 Not Helpful
               </HelpfulText>
             </Clickable>
-          </HelpfulContainer>
+          </BaseContainer>
         </span>
         <span
           hidden={!this.state.display}
         >
-          <ThanksContainer>
+          <BaseContainer>
             <HelpfulText>
               Thanks for your feedback.
             </HelpfulText>
-          </ThanksContainer>
+          </BaseContainer>
         </span>
       </Wrapper>
     );
