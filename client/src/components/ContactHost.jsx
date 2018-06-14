@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Wrapper,
-  StyledButton,
   Modal,
   ModalContent,
-  FacebookButton,
-  GoogleButton,
-  EmailButton,
+} from './styles/styles';
+import {
+  Wrapper,
+  StyledButton,
+  Button,
   Line,
   Login,
 } from './styles/ContactHost.styles';
@@ -48,20 +48,26 @@ export default class ContactHost extends React.Component {
           className="modal-hide"
         >
           <ModalContent>
-            <FacebookButton>
+            <Button
+              btnType="facebook"
+            >
               Continue with Facebook
-            </FacebookButton>
-            <GoogleButton>
+            </Button>
+            <Button
+              btnType="google"
+            >
               Continue with Google
-            </GoogleButton>
+            </Button>
             <Line>
               <hr className="half-line" />
               or
               <hr className="half-line" />
             </Line>
-            <EmailButton>
+            <Button
+              btnType="email"
+            >
               Sign up with Email
-            </EmailButton>
+            </Button>
             <Line>
               <hr className="full-line" />
             </Line>

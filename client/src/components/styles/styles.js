@@ -8,13 +8,29 @@ export const colors = {
   darkRed: '#660000',
 };
 
-export const Wrapper = styled.div`
+export const Modal = styled.div`
+  display: ${props => props.displayModal};
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 1em;
+  padding-bottom: 50px;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.4);
+`;
+
+export const ModalContent = styled.div`
   display: flex;
-  flex-direction: ${props => props.flexDirection};
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
-  border-radius: ${props => props.borderRadius};
-  width: ${props => props.width};
-  box-shadow: ${props => props.boxShadow};
-  color: ${props => props.color};
+  flex-direction: column;
+  background-color: white;
+  margin: auto;
+  padding: 2em;
+  box-shadow: 0 0 1px grey;
+  width: 40%;
+  min-width: 650px;
+  justify-content: center;
 `;

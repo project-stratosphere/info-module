@@ -1,15 +1,15 @@
 import styled from 'styled-components';
+import { colors } from './styles';
 
 export const Wrapper = styled.div`
-  order: 4;
-  border-bottom: solid #cccccc 1px;
+  border-bottom: solid ${colors.lightGrey} 1px;
   padding-bottom: 1em;
   margin-bottom: 1em;
 `;
 
 export const StyledButton = styled.button`
-  color: #009999;
-  border: solid #009999 1.25px;
+  color: ${colors.blueGreen};
+  border: solid ${colors.blueGreen} 1.25px;
   border-radius: 5px;
   background-color: white;
   cursor: pointer;
@@ -18,64 +18,33 @@ export const StyledButton = styled.button`
   margin: 1em;
 `;
 
-export const Modal = styled.div`
-  display: ${props => props.displayModal};
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  align-items: center;
-  background-color: rgb(255,255,255);
-  background-color: rgba(255,255,255,0.4);
-`;
-
-export const ModalContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Raleway', sans-serif;
-  background-color: white;
-  margin: auto;
-  padding: 2em;
-  box-shadow: 0 0 1px grey;
-  width: 50%;
-  justify-content: center;
-`;
-
-export const FacebookButton = styled.div`
-  background-color: rgb(71, 105, 176);
+export const Button = styled.div`
   border-radius: 5px;
-  color: white;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
   padding: 1em;
   margin-top: 1em;
-`;
-
-export const GoogleButton = styled.div`
-  background-color: white;
-  border: solid rgb(118, 118, 118) 2px;
-  border-radius: 5px;
-  color: rgb(71, 71, 71);
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  padding: 1em;
-  margin-top: 0.5em;
-`;
-
-export const EmailButton = styled.div`
-  color: white;
-  background-color: rgb(252, 91, 98);
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  padding: 1em;
-  margin-top: 0.5em;
+  background-color: ${(props) => {
+    if (props.btnType === 'facebook') {
+      return 'rgb(71, 105, 176)';
+    } else if (props.btnType === 'google') {
+      return 'white';
+    }
+    return 'rgb(252, 91, 98)';
+  }};
+  border: ${(props) => {
+    if (props.btnType === 'google') {
+      return 'solid rgb(118, 118, 118) 2px';
+    }
+    return 'none';
+  }};
+  color: ${(props) => {
+    if (props.btnType === 'google') {
+      return 'rgb(71, 71, 71)';
+    }
+    return 'white';
+  }};
 `;
 
 export const Line = styled.div`

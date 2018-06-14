@@ -6,7 +6,7 @@ module.exports = {
     filename: 'infobundle.js',
     path: path.join(__dirname, '/client/dist'),
   },
-  mode: 'production',
+  // mode: 'production',
   resolve: {
     extensions: [
       '.js',

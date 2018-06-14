@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { SVGContainer } from './styles/Summary.styles';
 import {
+  Modal,
+  ModalContent,
+} from './styles/styles';
+import {
   BasicSVG,
   DiningSVG,
   FacilitiesSVG,
@@ -12,18 +16,12 @@ import {
 import {
   Wrapper,
   Title,
-  AmenitiesContainer,
-  CategoryContainer,
   CategoryHead,
   CategoryItemContainer,
-  AmenityDescription,
-  Supplemental,
-  Modal,
   PreviewContainer,
   ShowAll,
   PreviewAmenity,
-  PreviewTitle,
-  ModalContent,
+  PreviewText,
 } from './styles/Amenities.styles';
 
 const renderIcon = (category) => {
@@ -99,9 +97,9 @@ export default class Amenities extends React.Component {
     return (
       <Wrapper>
         <PreviewContainer>
-          <PreviewTitle>
+          <PreviewText>
             Amenitites
-          </PreviewTitle>
+          </PreviewText>
           {
             this.props.amenities.items.map(item => (
               <PreviewAmenity
@@ -128,10 +126,10 @@ export default class Amenities extends React.Component {
             <Title>
               Amenities
             </Title>
-            <AmenitiesContainer>
+            <Wrapper>
               {
                 this.props.amenities.items.map(item => (
-                  <CategoryContainer
+                  <Wrapper
                     key={item.category_head}
                   >
                     <CategoryHead>
@@ -142,19 +140,19 @@ export default class Amenities extends React.Component {
                         <CategoryItemContainer
                           key={categoryItem.amenity_description}
                         >
-                          <AmenityDescription>
+                          <PreviewText>
                             {categoryItem.amenity_description}
-                          </AmenityDescription>
-                          <Supplemental>
+                          </PreviewText>
+                          <PreviewText>
                             {categoryItem.supplemental_description}
-                          </Supplemental>
+                          </PreviewText>
                         </CategoryItemContainer>
                       ))
                     }
-                  </CategoryContainer>
+                  </Wrapper>
                 ))
               }
-            </AmenitiesContainer>
+            </Wrapper>
           </ModalContent>
         </Modal>
       </Wrapper>);
