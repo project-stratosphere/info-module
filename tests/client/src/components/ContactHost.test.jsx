@@ -16,7 +16,11 @@ describe('ContactHost', () => {
     expect(output.state().displayModal).toEqual('none');
     output.find('.modal-display').simulate('click');
     expect(output.state().displayModal).toEqual('flex');
-    output.find('.modal-hide').simulate('click');
+    output.find('.modal-hide').simulate('click', {
+      target: {
+        className: 'modal-hide',
+      },
+    });
     expect(output.state().displayModal).toEqual('none');
   });
 });

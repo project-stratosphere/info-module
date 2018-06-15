@@ -14,10 +14,14 @@ exports[`ContactHost should render correctly 1`] = `
     onClick={[Function]}
   >
     <styled.div>
-      <styled.div>
+      <styled.div
+        btnType="facebook"
+      >
         Continue with Facebook
       </styled.div>
-      <styled.div>
+      <styled.div
+        btnType="google"
+      >
         Continue with Google
       </styled.div>
       <styled.div>
@@ -29,7 +33,9 @@ exports[`ContactHost should render correctly 1`] = `
           className="half-line"
         />
       </styled.div>
-      <styled.div>
+      <styled.div
+        btnType="email"
+      >
         Sign up with Email
       </styled.div>
       <styled.div>

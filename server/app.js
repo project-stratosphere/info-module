@@ -6,6 +6,11 @@ const db = require('../database');
 const app = express();
 
 app.use(cors());
+app.use('*.js', (req, res, next) => {
+  req.url += '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
 app.use('/rooms/:id', express.static(path.join(__dirname, '../client/dist/')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 

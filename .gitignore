@@ -24,4 +24,5 @@ coverage
 build/
 bundle.js
 infobundle.js
+infobundle.js.gz
 config.js
