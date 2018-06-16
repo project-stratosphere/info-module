@@ -8,6 +8,8 @@ import {
 } from './SVG';
 import {
   Wrapper,
+  Wrapper1,
+  Wrapper2,
   HomeType,
   HomeTitle,
   HomeLocation,
@@ -22,7 +24,7 @@ const Summary = props => (
   <Wrapper
     direction="row"
   >
-    <Wrapper
+    <Wrapper1
       direction="column"
     >
       <HomeType>
@@ -60,8 +62,8 @@ const Summary = props => (
           {props.property_features.baths} Baths
         </Feature>
       </Features>
-    </Wrapper>
-    <Wrapper
+    </Wrapper1>
+    <Wrapper2
       direction="column"
     >
       <StyledImage
@@ -71,7 +73,7 @@ const Summary = props => (
       <OwnerName>
         {props.owner.name}
       </OwnerName>
-    </Wrapper>
+    </Wrapper2>
   </Wrapper>
 );
 

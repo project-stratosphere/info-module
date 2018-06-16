@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
 const Loading = styled.div`
   margin: auto;
-  width: 120px;
+  width: 50%;
 `;
 
 export default class App extends React.Component {

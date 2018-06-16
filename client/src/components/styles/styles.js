@@ -30,7 +30,7 @@ export const ModalContent = styled.div`
   margin: auto;
   padding: 2em;
   box-shadow: 0 0 1px grey;
-  width: 40%;
-  min-width: 650px;
+  width: 100%;
+  max-width: 650px;
   justify-content: center;
 `;

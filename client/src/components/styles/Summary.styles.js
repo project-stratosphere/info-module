@@ -6,6 +6,23 @@ export const Wrapper = styled.div`
   flex-direction: ${props => props.direction};
   margin: 0.3em;
   font-weight: bold;
+  justify-content: space-between;
+`;
+
+export const Wrapper1 = styled.div`
+  display: flex;
+  flex-direction: ${props => props.direction};
+  margin: 0.3em;
+  font-weight: bold;
+`;
+
+export const Wrapper2 = styled.div`
+  display: flex;
+  flex-direction: ${props => props.direction};
+  margin: 0.3em;
+  padding-right: 4em;
+  font-weight: bold;
+  align-self: flex-end;
 `;
 
 export const HomeType = styled.div`
@@ -44,7 +61,6 @@ export const Feature = styled.div`
 
 export const StyledImage = styled.img`
   width: 4em;
-  height: auto;
   border-radius: 100%;
   cursor: pointer;
 `;
