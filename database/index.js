@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 
-let dbURI = 'mongodb://localhost/properties';
+let dbURI = 'mongodb://georgina:tennis203@ds263590.mlab.com:63590/airbnb-properties';
 
 if (process.env.USER && process.env.PASSWORD) {
   dbURI = `mongodb://${process.env.USER}:${process.env.PASSWORD}@ds016718.mlab.com:16718/airbnc`;
@@ -49,5 +49,44 @@ const getAmenities = id =>
     });
   });
 
+const postGeneralInfo = (data) => 
+  new Promise((resolve, reject) => {
+    GeneralInfo.insertMany((data), (err, results) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    })
+  });
+
+const patchGeneralInfo = (data) => {
+  new Promise((resolve, reject) => {
+    GeneralInfo.updateMany((data), (err, results) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    })
+  })
+}
+
+const deleteGeneralInfo = (data) => {
+  new Promise((resolve, reject) => {
+    GeneralInfo.deleteMany((data), (err, results) => {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(results);
+      }
+    })
+  })
+}
+
+
 module.exports.getGeneralInfo = getGeneralInfo;
 module.exports.getAmenities = getAmenities;
+module.exports.postGeneralInfo = postGeneralInfo;
+module.exports.updateGeneralInfo = updateGeneralInfo;
+module.exports.deleteGeneralInfo = deleteGeneralInfo;

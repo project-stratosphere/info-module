@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
 
-mongoose.connect('mongodb://localhost/properties');
+mongoose.connect('mongodb://georgina:tennis203@ds263590.mlab.com:63590/airbnb-properties');
 
 const db = mongoose.connection;
 const generalInfoSchema = mongoose.Schema({
