@@ -60,7 +60,7 @@ const postGeneralInfo = (data) =>
     })
   });
 
-const patchGeneralInfo = (data) => {
+const updateGeneralInfo = (data) => {
   new Promise((resolve, reject) => {
     GeneralInfo.updateMany((data), (err, results) => {
       if(err) {
