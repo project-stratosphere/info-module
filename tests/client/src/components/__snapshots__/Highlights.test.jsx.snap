@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlights should render correctly 1`] = `
+<styled.div>
+  <styled.div>
+    Home Highlights
+  </styled.div>
+  <styled.div>
+    <Highlight
+      highlight={
+        Object {
+          "body": "Mock Body",
+          "head": "Mock Head",
+        }
+      }
+      key="Mock Head"
+    />
+  </styled.div>
+</styled.div>
+`;

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<styled.div>
+  <Summary
+    home_type="Intelligent HOUSE"
+    location="Rosenbaummouth"
+    owner={
+      Object {
+        "avatar_url": "https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg",
+        "name": "Pearl",
+      }
+    }
+    property_features={
+      Object {
+        "baths": 4,
+        "bedrooms": 0,
+        "beds": 5,
+        "guests": 3,
+      }
+    }
+    title="Practical Fantastic Home"
+  />
+  <Highlights
+    highlights={
+      Array [
+        Object {
+          "body": "",
+          "head": "Indoor fireplace",
+        },
+        Object {
+          "body": "",
+          "head": "Self check-in",
+        },
+        Object {
+          "body": "",
+          "head": "Great check-in experience",
+        },
+      ]
+    }
+  />
+  <Description
+    more_description={
+      Array [
+        Object {
+          "body": "Adipisci reprehenderit repudiandae blanditiis. Dolor assumenda consectetur fuga. Eveniet amet optio quo veniam vel at quas. Nisi et autem et magni dolorem accusamus ipsam eius laborum.",
+          "head": "The space",
+        },
+        Object {
+          "body": "Labore rerum sed tempore ipsa magnam odio ducimus modi error.",
+          "head": "Guest access",
+        },
+      ]
+    }
+    short_description="Harum perspiciatis minima tempore nobis sed."
+  />
+  <ContactHost />
+  <Amenities
+    amenities={
+      Object {
+        "id": 1,
+        "items": Array [
+          Object {
+            "category_head": "Industrial",
+            "category_items": Array [
+              Object {
+                "amenity_description": "primary",
+                "supplemental_description": "Qui ut qui reiciendis omnis id delectus assumenda.",
+              },
+              Object {
+                "amenity_description": "Pa'anga",
+                "supplemental_description": "Optio odio odio.",
+              },
+              Object {
+                "amenity_description": "Customer-focused",
+                "supplemental_description": "Vel sed ad optio et eligendi ab.",
+              },
+            ],
+          },
+          Object {
+            "category_head": "Industrial2",
+            "category_items": Array [
+              Object {
+                "amenity_description": "primary",
+                "supplemental_description": "Qui ut qui reiciendis omnis id delectus assumenda.",
+              },
+              Object {
+                "amenity_description": "Pa'anga",
+                "supplemental_description": "Optio odio odio.",
+              },
+              Object {
+                "amenity_description": "Customer-focused",
+                "supplemental_description": "Vel sed ad optio et eligendi ab.",
+              },
+            ],
+          },
+        ],
+      }
+    }
+  />
+</styled.div>
+`;
