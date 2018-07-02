@@ -1,8 +1,108 @@
 const faker = require('faker');
 const fs = require('fs');
-var csvData = 'title,location,home_type,short_description,more_description,highlights,owner,property_features\n';
+// var stream = fs.createWriteStream('data.csv');
+// var csvData = 'title,location,home_type,short_description,more_description,highlights,owner,property_features\n';
 
-generateGeneralInfo();
+
+  const generateGeneralInfo = (id) => {
+    var obj = {}
+    var title = `${faker.commerce.productAdjective()} ${faker.commerce.productAdjective()} Home`
+    var location = faker.address.city()
+    var home_type = `${faker.commerce.productAdjective()} HOUSE`
+    var short_description = faker.lorem.sentence();
+    var more_description = moreDescriptionGenerator();
+    var highlights = highlightsGenerator();
+    var owner = [faker.name.firstName(),faker.internet.avatar()];
+    var property_features = [faker.random.number(10),faker.random.number(6),faker.random.number(6),faker.random.number(4)]
+    obj.id = id
+    obj.data = `${title},${location},${home_type},${short_description},[${more_description}],[${highlights}],[${owner}],[${property_features}]`
+  return obj
+  }
+
+  const highlightsGenerator = () => {
+    var arr = [];
+    let possibleHighlights = [
+      {
+        head: 'Great check-in experience',
+        body: faker.lorem.sentence(),
+      },
+      {
+        head: 'Great location',
+        body: faker.lorem.sentence(),
+      },
+      {
+        head: 'Self check-in',
+        body: faker.lorem.sentence(),
+      },
+      {
+        head: 'Sparkling clean',
+        body: faker.lorem.sentence(),
+      },
+      {
+        head: 'Breakfast',
+        body: faker.lorem.sentence(),
+      },
+      {
+        head: 'Indoor fireplace',
+        body: faker.lorem.sentence(),
+      },
+    ]
+    for (var i = 0; i < 3; i++) {
+      let index = parseInt(Math.random() * possibleHighlights.length);
+      if(possibleHighlights[index]){
+       arr.push(`${possibleHighlights[index].head}`)
+       arr.push(`${possibleHighlights[index].body}`)
+       possibleHighlights.splice(index, 1);
+      }
+      
+    }
+    return arr;
+}
+
+const moreDescriptionGenerator = () => {
+  let possibleDescriptions = [
+    {
+      head: 'Guest access',
+      body: faker.lorem.sentence(),
+    },
+    {
+      head: 'Interaction with guests',
+      body: faker.lorem.sentence(),
+    },
+    {
+      head: 'Other things to note',
+      body: faker.lorem.sentence(),
+    },
+  ];
+  let arr = ['The space',`${faker.lorem.paragraph()}`];
+
+  for (var i = 0; i < faker.random.arrayElement([1, 2, 3]); i++) {
+    let index = parseInt(Math.random() * possibleDescriptions.length);
+    if(possibleDescriptions[index]) {
+      arr.push(`${possibleDescriptions[index].head}`);
+      arr.push(`${possibleDescriptions[index].body}`);
+      possibleDescriptions.splice(index, 1);
+    }
+  }
+return arr
+}
+
+
+
+// var csvAmenities = 'category_head,category_item_desc,category_item_supl_desc,listing_id\n';
+
+// const generateCategoryItems = (category) => {
+//   let arr = [];
+
+//   for (var i = 0; i < faker.random.arrayElement([2, 3]); i++) {
+//     let index = parseInt(Math.random() * category.length);
+//     arr.push(category[index]);
+//     category.splice(index, 1);
+//   }
+
+//   return arr;
+// }
+
 // const generateItems = () => {
   
 //   let possibleAmenities = {
@@ -170,18 +270,46 @@ generateGeneralInfo();
 // }
 
 // const generateAmenitiesInfo = (id) => {
-//   return {
-//     id: id,
-//     items: generateItems(),
+//   var items = generateItems();
+//   var listing_id = id;
+//   var category_head = [];
+//   var category_items_desc = [];
+//   var category_items_supl = [];
+//   items.forEach(function(item){
+//     category_head.push(item.category_head)
+    
+//     item.category_items.forEach(function(item){
+//       if(item) {
+//         category_items_desc.push(item.amenity_description)
+//         category_items_supl.push(item.supplemental_description)
+//       }
+     
+//     })
+    
+//   })
+  
+//   csvAmenities += `[${category_head}],[${category_items_desc}],[${category_items_supl}],${listing_id}`
+  
+// }
+
+// function writeData() {
+//   for(var streams = 1; streams <= 5001; streams++) {
+//     console.time('batch')
+//     var data = ''
+//       for (var i = 1; i <= 2001;i++) {
+//         data += generateGeneralInfo();
+//       }
+//     stream.write(data);
+//     stream.on('drain',function(){
+//       console.log('drain')
+//     })
+//     console.timeEnd('batch')
+//     console.log(`batch ${streams} written to file`)
 //   }
 // }
 
-// let generalArr = [];
-// let amenityArr = [];
+// writeData();
 
-// for (var i = 1; i <= 1; i++) {
-//   // generalArr.push(generateGeneralInfo(i));
-//   amenityArr.push(generateAmenitiesInfo(i));
-// }
 
-// fs.writeFileSync('data.csv', csvData);
+// fs.writeFileSync('dataAmenities.csv', csvAmenities);
+module.exports = generateGeneralInfo;

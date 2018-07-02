@@ -1,50 +1,61 @@
+-- Table: public.general
+-- SCHEMA: public
 
-dropdb general-info
+DROP SCHEMA public ;
 
-create database general-info
-
-psql general-info
-
-CREATE SCHEMA "listing-info"
+CREATE SCHEMA public
     AUTHORIZATION humanity;
 
--- Table: "listing-info".general
+COMMENT ON SCHEMA public
+    IS 'standard public schema';
 
--- DROP TABLE "listing-info".general;
+GRANT ALL ON SCHEMA public TO PUBLIC;
 
-CREATE TABLE "listing-info".general
+GRANT ALL ON SCHEMA public TO humanity;
+
+DROP TABLE public.general;
+
+CREATE TABLE public.general
 (
-    id integer NOT NULL,
-    title text COLLATE pg_catalog."default" NOT NULL,
-    location text COLLATE pg_catalog."default" NOT NULL,
-    home_type text COLLATE pg_catalog."default" NOT NULL,
-    name character(100) COLLATE pg_catalog."default" NOT NULL,
-    avatar_url text COLLATE pg_catalog."default" NOT NULL,
-    short_description text COLLATE pg_catalog."default" NOT NULL,
-    more_description1_body text COLLATE pg_catalog."default" NOT NULL,
-    more_description1_head text COLLATE pg_catalog."default" NOT NULL,
-    more_description2_body text COLLATE pg_catalog."default",
-    more_description2_head text COLLATE pg_catalog."default",
-    more_description3_body text COLLATE pg_catalog."default",
-    more_description3_head text COLLATE pg_catalog."default",
-    highlights1_body text COLLATE pg_catalog."default",
-    highlights1_head text COLLATE pg_catalog."default",
-    highlights2_body text COLLATE pg_catalog."default",
-    highlights2_head text COLLATE pg_catalog."default",
-    highlights3_body text COLLATE pg_catalog."default",
-    highlights3_head text COLLATE pg_catalog."default",
-    guests smallint,
-    bedrooms smallint,
-    beds smallint,
-    baths smallint,
-    CONSTRAINT general_pkey PRIMARY KEY (id)
-)
+    title text COLLATE pg_catalog."default",
+    location text COLLATE pg_catalog."default",
+    home_type text COLLATE pg_catalog."default",
+    short_description text COLLATE pg_catalog."default",
+    more_description text[] COLLATE pg_catalog."default",
+    highlights text[] COLLATE pg_catalog."default",
+    owner text[] COLLATE pg_catalog."default" NOT NULL,
+    property_features smallint[] NOT NULL,
+    id integer NOT NULL DEFAULT nextval('general_id_seq'::regclass)
+) PARTITION BY RANGE (id);
 WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
 
-ALTER TABLE "listing-info".general
+ALTER TABLE public.general
     OWNER to humanity;
 
+DROP INDEX public.general_id;
+
+CREATE UNIQUE INDEX general_id
+    ON public.general USING btree
+    (id)
+    TABLESPACE pg_default;
+
+CREATE TABLE generalOne PARTITION OF public.general
+FOR VALUES FROM (1) TO (2500000);
+
+CREATE TABLE generalTwo PARTITION OF public.general
+FOR VALUES FROM (2500000) TO (5000000);
+
+CREATE TABLE generalThree PARTITION OF public.general
+FOR VALUES FROM (5000001) TO (7500000);
+
+CREATE TABLE generalFour PARTITION OF public.general
+FOR VALUES FROM (7500001) TO (10000000);
+
+CREATE INDEX ON generalOne (id);
+CREATE INDEX ON generalTwo (id);
+CREATE INDEX ON generalThree (id);
+CREATE INDEX ON generalFour (id);
 

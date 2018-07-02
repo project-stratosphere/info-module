@@ -1,5 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
+// var stream = fs.createWriteStream('data.csv');
+var stream = fs.createWriteStream('ids.csv');
 // var csvData = 'title,location,home_type,short_description,more_description,highlights,owner,property_features\n';
 
 
@@ -13,7 +15,7 @@ const fs = require('fs');
     var highlights = highlightsGenerator();
     var owner = [faker.name.firstName(),faker.internet.avatar()];
     var property_features = [faker.random.number(10),faker.random.number(6),faker.random.number(6),faker.random.number(4)]
-    csvData += `${title},${location},${home_type},${short_description},[${more_description}],[${highlights}],[${owner}],[${property_features}]\n`
+    csvData += `${title},${location},${home_type},${short_description},"{${more_description}}","{${highlights}}","{${owner}}","{${property_features}}"\n`
    return csvData; 
   }
 
@@ -48,8 +50,8 @@ const fs = require('fs');
     for (var i = 0; i < 3; i++) {
       let index = parseInt(Math.random() * possibleHighlights.length);
       if(possibleHighlights[index]){
-       arr.push(possibleHighlights[index].head)
-       arr.push(possibleHighlights[index].body)
+       arr.push(`${possibleHighlights[index].head}`)
+       arr.push(`${possibleHighlights[index].body}`)
        possibleHighlights.splice(index, 1);
       }
       
@@ -72,13 +74,13 @@ const moreDescriptionGenerator = () => {
       body: faker.lorem.sentence(),
     },
   ];
-  let arr = ['The space',faker.lorem.paragraph()];
+  let arr = ['The space',`${faker.lorem.paragraph()}`];
 
   for (var i = 0; i < faker.random.arrayElement([1, 2, 3]); i++) {
     let index = parseInt(Math.random() * possibleDescriptions.length);
     if(possibleDescriptions[index]) {
-      arr.push(possibleDescriptions[index].head);
-      arr.push(possibleDescriptions[index].body);
+      arr.push(`${possibleDescriptions[index].head}`);
+      arr.push(`${possibleDescriptions[index].body}`);
       possibleDescriptions.splice(index, 1);
     }
   }
@@ -290,18 +292,40 @@ return arr
   
 // }
 
-function appendData() {
-  
-  for(var streams = 1; streams <= 201; streams++) {
+// function writeData() {
+//   for(var streams = 1; streams <= 5000; streams++) {
+//     console.time('batch')
+//     var data = ''
+//       for (var i = 1; i <= 2000;i++) {
+//         data += generateGeneralInfo();
+//       }
+//     stream.write(data);
+//     stream.on('drain',function(){
+//       console.log('drain')
+//     })
+//     console.timeEnd('batch')
+//     console.log(`batch ${streams} written to file`)
+//   }
+// }
+
+// writeData();
+
+
+function writeData() {
+    console.time('batch')
     var data = ''
-      for (var i = 1; i <= 5;i++) {
-        data += generateGeneralInfo();
-      }
-    fs.appendFileSync('dataG.csv', data);
-  }
+    var id = 1204040
+    for(var i = 0; i <= 1000; i++){
+      id+=8050
+      data += `${id.toString()}\n`;
+    }
+    stream.write(data);
+    stream.on('drain',function(){
+      console.log('drain')
+    console.timeEnd('batch')
+    console.log(`batch ${streams} written to file`)
+  })
 }
 
-appendData();
-
-
+writeData();
 // fs.writeFileSync('dataAmenities.csv', csvAmenities);
