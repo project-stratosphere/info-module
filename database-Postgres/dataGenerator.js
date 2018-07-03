@@ -1,7 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
-// var stream = fs.createWriteStream('data.csv');
-var stream = fs.createWriteStream('ids.csv');
+var stream = fs.createWriteStream('data.csv');
+// var stream = fs.createWriteStream('ids.csv');
 // var csvData = 'title,location,home_type,short_description,more_description,highlights,owner,property_features\n';
 
 
@@ -292,40 +292,40 @@ return arr
   
 // }
 
-// function writeData() {
-//   for(var streams = 1; streams <= 5000; streams++) {
-//     console.time('batch')
-//     var data = ''
-//       for (var i = 1; i <= 2000;i++) {
-//         data += generateGeneralInfo();
-//       }
-//     stream.write(data);
-//     stream.on('drain',function(){
-//       console.log('drain')
-//     })
-//     console.timeEnd('batch')
-//     console.log(`batch ${streams} written to file`)
-//   }
-// }
-
-// writeData();
-
-
 function writeData() {
+  for(var streams = 1; streams <= 5000; streams++) {
     console.time('batch')
     var data = ''
-    var id = 1204040
-    for(var i = 0; i <= 1000; i++){
-      id+=8050
-      data += `${id.toString()}\n`;
-    }
+      for (var i = 1; i <= 2000;i++) {
+        data += generateGeneralInfo();
+      }
     stream.write(data);
     stream.on('drain',function(){
       console.log('drain')
+    })
     console.timeEnd('batch')
     console.log(`batch ${streams} written to file`)
-  })
+  }
 }
 
 writeData();
+
+
+// function writeData() {
+//     console.time('batch')
+//     var data = ''
+//     var id = 1204040
+//     for(var i = 0; i <= 1000; i++){
+//       id+=8050
+//       data += `${id.toString()}\n`;
+//     }
+//     stream.write(data);
+//     stream.on('drain',function(){
+//       console.log('drain')
+//     console.timeEnd('batch')
+//     console.log(`batch ${streams} written to file`)
+//   })
+// }
+
+// writeData();
 // fs.writeFileSync('dataAmenities.csv', csvAmenities);

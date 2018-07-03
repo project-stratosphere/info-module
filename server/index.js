@@ -1,13 +1,14 @@
 require('newrelic');
-const compression = require('compression')
-const express = require('express')
+const cluster = require('cluster');
+const compression = require('compression');
+const express = require('express');
 const redis = require('redis');
 const client = redis.createClient();
 const path = require('path');
 const cors = require('cors');
 const db = require('../database-Postgres/index.js');
-const bodyParser = require('body-parser')
-const amenities = require('./amenitiesData.js')
+const bodyParser = require('body-parser');
+const amenities = require('./amenitiesData.js');
 const app = express();
 
 
@@ -37,7 +38,7 @@ const getCache = (req, res, id) => {
           res.end()
         } else {
           res.statusCode = 200;
-          client.setex(id,3000, JSON.stringify(results));
+          client.setex(id, 3600, JSON.stringify(results));
           res.end( JSON.stringify(results))
         }
       })
